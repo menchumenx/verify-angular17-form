@@ -1,27 +1,115 @@
-# MiApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0-rc.0.
 
-## Development server
+```markdown
+# Documentación del Proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descripción
+Este proyecto es una aplicación básica en Angular 17 que consta de dos pantallas principales:
+1. **Pantalla de Login:** Un formulario que valida el email y la contraseña de forma reactiva.
+2. **Pantalla de Éxito:** Una pantalla que muestra un mensaje de bienvenida junto con una animación GIF divertida.
 
-## Code scaffolding
+## Tecnologías Utilizadas
+- **Framework:** Angular 17 (Standalone Components).
+- **Preprocesador de Estilos:** CSS con variables globales para mantener consistencia.
+- **Navegación:** Angular Router para gestionar las rutas.
+- **Validación de Formularios:** Reactive Forms para validar email y contraseña.
+- **Animaciones:** CSS para efectos visuales en el proyecto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Instrucciones para Probar el Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. **Clonar el Proyecto**
+Clona el repositorio en tu máquina local utilizando el siguiente comando:
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
 
-## Running unit tests
+### 2. **Instalar Dependencias**
+Accede al directorio del proyecto y ejecuta el siguiente comando para instalar las dependencias necesarias:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 3. **Ejecutar el Proyecto**
+Inicia el servidor de desarrollo con el siguiente comando:
+```bash
+ng serve
+```
+Esto abrirá la aplicación en tu navegador en la dirección `http://localhost:4200`.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Estructura del Proyecto
+```plaintext
+src/
+├── app/
+│   ├── components/
+│   │   ├── login/        # Componentes relacionados con el Login
+│   │   ├── success/      # Componentes relacionados con la Pantalla de Éxito
+│   ├── app.routes.ts     # Configuración de rutas
+│   ├── app.config.ts     # Configuración del módulo principal
+├── assets/               # Recursos como imágenes y GIFs
+├── styles.css            # Estilos globales
+├── main.ts               # Punto de entrada de la aplicación
+```
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Funcionalidades
+
+### 1. **Pantalla de Login**
+- **Email:**
+  - Es obligatorio y debe ser un email válido.
+  - Si es inválido, se muestra un mensaje de error reactivo.
+- **Contraseña:**
+  - Es obligatoria y debe cumplir los siguientes requisitos:
+    - Mínimo 6 caracteres.
+    - Al menos 1 mayúscula.
+    - Al menos 1 carácter especial.
+  - Los errores se muestran dinámicamente según los requisitos que no se cumplan.
+
+- **Botón Login:**
+  - Habilitado solo si el formulario es válido.
+  - Redirige a la Pantalla de Éxito al hacer clic.
+
+### 2. **Pantalla de Éxito**
+- Muestra un mensaje de bienvenida.
+- Incluye un GIF divertido almacenado localmente en la carpeta `assets`.
+- Botón "Go Back" para regresar al Login.
+
+---
+
+## Validación y Testeo
+### Validaciones Implementadas
+- **Email:** Validación estándar para formato de email.
+- **Contraseña:**
+  - Validador personalizado para comprobar complejidad.
+  - Errores visibles solo cuando el usuario interactúa con el campo.
+
+### Pasos para Verificar
+1. Ingresa un email inválido y observa el mensaje de error.
+2. Ingresa una contraseña que no cumpla con los requisitos y verifica los mensajes.
+3. Corrige los errores y envía el formulario.
+4. Verifica que eres redirigido a la pantalla de éxito.
+
+---
+
+## Configuración de Rutas
+- **`/`**: Ruta de Login.
+- **`/success`**: Pantalla de Éxito.
+
+---
+
+## Mejoras Futuras
+1. **Integración con Backend:**
+   - Enviar los datos del formulario a un servidor para validaciones reales.
+2. **Test Unitarios:**
+   - Implementar pruebas unitarias con `Karma` y `Jasmine` para validar los formularios y la navegación.
+3. **Soporte Multilingüe:**
+   - Agregar soporte para varios idiomas usando Angular i18n.
+
+---
+
+Si tienes preguntas o sugerencias, no dudes en contactarme. 😊
+```

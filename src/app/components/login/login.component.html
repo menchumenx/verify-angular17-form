@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h2 class="form-container-title">Log<span>in</span></h2>
+
+  <!-- Formulario reactivo de Angular para login -->
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+
+    <div class="form-input-container">
+      <label for="email" class="form-label">Email:</label>
+      <input class="form-control" id="email" type="email" formControlName="email" autocomplete="email" />
+
+      <!-- Mensaje de error si el email es inválido -->
+      <div *ngIf="emailControl?.invalid && emailControl?.dirty" class="form-control-error">
+        Por favor, introduce un email válido.
+      </div>
+    </div>
+
+    <div class="form-input-container">
+      <label for="password" class="form-label">Contraseña:</label>
+      <input class="form-control" id="password" type="password" formControlName="password" autocomplete="current-password" />
+
+      <!-- Mensajes condicionales según los errores de la contraseña -->
+      <div *ngIf="passwordControl?.dirty && passwordControl?.errors as errors" class="form-control-errorContainer">
+        <div *ngIf="errors['minLength']" class="form-control-error">
+          * La contraseña debe tener al menos 6 caracteres.
+        </div>
+        <div *ngIf="errors['uppercase']" class="form-control-error">
+          * La contraseña debe tener al menos 1 mayúscula.
+        </div>
+        <div *ngIf="errors['specialChar']" class="form-control-error">
+          * La contraseña debe tener al menos un carácter especial (&#64;$!%*?&amp;).
+        </div>
+      </div>
+    </div>
+
+    <button class="login-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+
+  </form>
+</div>
