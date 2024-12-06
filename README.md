@@ -20,7 +20,7 @@ Este proyecto es una aplicación básica en Angular 17 que consta de dos pantall
 ## Instrucciones para Probar el Proyecto
 
 ### 1. **Clonar el Proyecto**
-Clona el repositorio en tu máquina local utilizando el siguiente comando:
+Clona el repositorio en tu local utilizando el siguiente comando:
 ```bash
 git clone <https://github.com/menchumenx/verify-angular17-form.git>
 ```
